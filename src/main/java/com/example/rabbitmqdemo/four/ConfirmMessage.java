@@ -113,7 +113,7 @@ public class ConfirmMessage {
         ConcurrentSkipListMap<Long,String> outstandingConfirms = new ConcurrentSkipListMap<>();  //四
 
         //消息确认成功 回调函数
-        ConfirmCallback ackCallback=(deliveryTag,  multiple)->{
+        ConfirmCallback ackCallback=(deliveryTag,multiple)->{
             if(multiple){ //七
                 //2.删除已经确认的消息 剩下的就是未确认的消息  37p如何处理异步未确认消息 二、
                 ConcurrentNavigableMap<Long, String> longStringConcurrentNavigableMap =
