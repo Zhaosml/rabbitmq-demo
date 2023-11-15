@@ -31,8 +31,7 @@ public class Task1 {
         channel.queueDeclare(QUEUE_NAME,false,false,false,null);
         //从控制台中接受信息
         Scanner scanner = new Scanner(System.in);
-        while (scanner.hasNext()){
-            //是否有下一个消息
+        while (scanner.hasNext()){  //是否有下一个消息
             String message = scanner.next();
             /*
              * 发送一个消费

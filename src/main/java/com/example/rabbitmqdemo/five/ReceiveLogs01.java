@@ -35,6 +35,7 @@ public class ReceiveLogs01 {
         DeliverCallback deliverCallback = ( consumerTag,  message)->{
             System.out.println("ReceiveLogs01控制台打印接收到的消息"+ new String(message.getBody(),"UTF-8"));
         };
+
         //消费者取消消息时回调接口
         channel.basicConsume(queueName,true,deliverCallback,consumerTag -> {});
     }

@@ -14,7 +14,7 @@ import java.util.Scanner;
  */
 public class Task2 {
     //队列名称
-    public static final String task_queue_name = "ack_queue";
+    public static final String TASK_QUEUE_NAME = "ack_queue";
 
     public static void main(String[] args) throws Exception {
         Channel channel = RabbitMqUtils.getChannel();
@@ -34,7 +34,7 @@ public class Task2 {
         while (scanner.hasNext()){
             String message = scanner.next();
             //设置生产者发送消息为持久化消息(要求保存在磁盘上)保存在内存中
-            channel.basicPublish("",task_queue_name, MessageProperties.PERSISTENT_TEXT_PLAIN,message.getBytes("UTF-8"));
+            channel.basicPublish("",TASK_QUEUE_NAME, MessageProperties.PERSISTENT_TEXT_PLAIN,message.getBytes("UTF-8"));
             System.out.println("消息发送完毕:"+message);
         }
     }

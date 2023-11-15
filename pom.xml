@@ -13,6 +13,7 @@
     <version>0.0.1-SNAPSHOT</version>
     <name>rabbitmq-demo</name>
     <description>rabbitmq-demo</description>
+    <packaging>pom</packaging>
     <properties>
         <java.version>8</java.version>
     </properties>
